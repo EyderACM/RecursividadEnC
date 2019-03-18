@@ -31,7 +31,7 @@ void solucionDeRecurrencia();
 int main() {
 
     int accion = 0;
-    printf("Ingrese el numero del algoritmo que desea probar\n");
+    printf("Ingrese el numero del algoritmo que desea probar\n\n");
     printf("1 Factorial\n");
     printf("2 Multiplicacion Entera\n");
     printf("3 Exponenciacion Entera\n");
@@ -93,7 +93,7 @@ int factorial(int numero){
 /*
  * Multiplicacion Entera
  * Entradas: Los numeros a multiplicar: a y b. Como precondicion se 
- * considera que los nummeros deben ser no negativos, a, b >0
+ * considera que los numeros deben ser no negativos, a, b >0
  * 
  * Salidas: El valor del producto de los dos factores pasados, 
  * es decir, mult(a, b) = a * b
@@ -225,7 +225,7 @@ int suma_vec(int size, int vector[size]) {
 void invocarBusquedaBinaria() {
     int sizeVector = 100, buscado, resultado;
     int vector[sizeVector];
-    printf("Ingresa el numero que deseas encontrar\n");
+    printf("Ingresa el numero que deseas encontrar en un rango de 0 a 100\n");
     scanf("%d", &buscado);    
 
     for(int i = 0; i < sizeVector; i++){        
@@ -250,27 +250,23 @@ int busBinR(int inicio, int fin, int vector[fin], int buscado) {
 
 /*
  * Solucion de recurrencia
- * Entradas: Coeficientes y raices de una solucion de una relacion de
+ * Entradas: CRaices de una solucion de una relacion de
  * recurrencia lineal homogenea de segundo orden
  * 
  * Salidas: Los primeros 20 valores de la solucion
  */
 
 void solucionDeRecurrencia(){
-    int coeficiente1, coeficiente2, raiz1, raiz2, resultado;
-    printf("Relacion de la forma A(r1)^n B(r2)^n\n");
-    printf("Ingresa el valor del primer coeficiente ");
-    scanf("%d", &coeficiente1);
-    printf("Ingresa el valor del segundo coeficiente ");
-    scanf("%d", &coeficiente2);
+    int raiz1, raiz2, resultado;
+    printf("Relacion de la forma 2(r1)^n + 3(r2)^n\n");
     printf("Ingresa el resultado de la primera raiz ");
     scanf("%d", &raiz1);
     printf("Ingresa el resultado de la primera raiz ");
     scanf("%d", &raiz2);
 
     for(int i = 1; i <= 20; i++){
-        resultado = coeficiente1*expR(raiz1, i) + coeficiente2*expR(raiz2, i);
-        printf("El resultado en la sucecion %d, es de %d \n", i, resultado);
+        resultado = 2*expR(raiz1, i) + 3*expR(raiz2, i);
+        printf("El resultado en la sucesion %d, es de %d \n", i, resultado);
     }
 }
 
