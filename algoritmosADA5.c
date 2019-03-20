@@ -250,23 +250,24 @@ int busBinR(int inicio, int fin, int vector[fin], int buscado) {
 
 /*
  * Solucion de recurrencia
- * Entradas: CRaices de una solucion de una relacion de
- * recurrencia lineal homogenea de segundo orden
+ * Entradas: Casos base de una relación de recurrencia
  * 
- * Salidas: Los primeros 20 valores de la solucion
+ * Salidas: Los primeros 20 valores de la recurrencia
  */
 
 void solucionDeRecurrencia(){
-    int raiz1, raiz2, resultado;
-    printf("Relacion de la forma 2(r1)^n + 3(r2)^n\n");
-    printf("Ingresa el resultado de la primera raiz ");
-    scanf("%d", &raiz1);
-    printf("Ingresa el resultado de la primera raiz ");
-    scanf("%d", &raiz2);
-
-    for(int i = 1; i <= 20; i++){
-        resultado = 2*expR(raiz1, i) + 3*expR(raiz2, i);
-        printf("El resultado en la sucesion %d, es de %d \n", i, resultado);
+    int base1, base2, alfa1, alfa2; 
+    double resultado;
+    printf("Relacion de la forma 5an-1 - 6an-2\n");
+    printf("Ingresa el caso base a0 ");
+    scanf("%d", &base1);
+    printf("Ingresa el caso base a1 ");
+    scanf("%d", &base2);
+    alfa1 = (base2 - base1*2);
+    alfa2 = (base1 - alfa1);
+    for(int i = 0; i <= 20; i++){
+        resultado = alfa1*(expR(3, i)) + alfa2*(expR(2, i));
+        printf("\nEl resultado %d es de %lf \n", i, resultado);
     }
 }
 
